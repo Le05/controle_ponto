@@ -1,0 +1,143 @@
+Card(
+                            elevation: 10,
+                            margin: EdgeInsets.only(left: 15, right: 15, top: 10),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10,right: 10,top: 15,bottom: 5),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      /*Text(
+                                        "Data do Ponto:",
+                                        style: TextStyle(fontSize: 17),
+                                      ),*/
+                                      Text("${snapshot.data[index].dia}",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  Divider(height: 10,),
+                                  SizedBox(height: 5,),
+                                  Row(
+                                    children: <Widget>[
+                                      Image.asset("images/input.png",width: 25,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        "Entrada1",
+                                        style: TextStyle(fontSize: 17),
+                                      ),
+                                      SizedBox(width: MediaQuery.of(context).size.width / 2.1,),
+                                      Text(snapshot.data[index].entrada1 != null
+                                              ? "${snapshot.data[index].entrada1}"
+                                              : "-----",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  SizedBox(height: 5,),
+                                  Divider(height: 10,),
+                                  Row(
+                                    children: <Widget>[
+                                      Image.asset("images/output.png",width: 25,height: 25,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        "Saida1",
+                                        style: TextStyle(fontSize: 17),
+                                      ),
+                                      SizedBox(width: MediaQuery.of(context).size.width / 1.92,),
+                                      Text(
+                                          snapshot.data[index].saida1 != null
+                                              ? "${snapshot.data[index].saida1}"
+                                              : "-----",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  SizedBox(height: 5,),
+                                  Divider(height: 10,),
+                                  Row(
+                                    children: <Widget>[
+                                       Image.asset("images/input.png",width: 25,height: 25,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        "Entrada2",
+                                        style: TextStyle(fontSize: 17),
+                                      ),
+                                      SizedBox(width: MediaQuery.of(context).size.width / 2.1,),
+                                      Text(
+                                          snapshot.data[index].entrada2 != null
+                                              ? "${snapshot.data[index].entrada2}"
+                                              : "-----",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  Divider(height: 10,),
+                                  Row(
+                                    children: <Widget>[
+                                       Image.asset("images/output.png",width: 25,height: 25,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        "Saida2",
+                                        style: TextStyle(fontSize: 17),
+                                      ),
+                                       SizedBox(width: MediaQuery.of(context).size.width / 2.67,),
+                                      Text(
+                                          snapshot.data[index].saida2 != null
+                                              ? "${snapshot.data[index].saida2}"
+                                              : "Não foi batido",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  Divider(height: 10,),
+                                  Row(
+                                    children: <Widget>[
+                                       Image.asset("images/input.png",width: 25,height: 25,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        "Entrada3",
+                                        style: TextStyle(fontSize: 17),
+                                      ),
+                                      SizedBox(width: MediaQuery.of(context).size.width / 3,),
+                                      Text(
+                                          snapshot.data[index].entrada3 != null
+                                              ? "${snapshot.data[index].entrada3}"
+                                              : "Não foi batido",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  Divider(height: 10,),
+                                  Row(
+                                    children: <Widget>[
+                                       Image.asset("images/output.png",width: 25,height: 25,),
+                                      SizedBox(width: 5,),
+                                      Text(
+                                        "Saida3",
+                                        style: TextStyle(fontSize: 17),
+                                      ),
+                                       SizedBox(width: MediaQuery.of(context).size.width / 2.67,),
+                                      Text(
+                                          snapshot.data[index].saida3 != null
+                                              ? "${snapshot.data[index].saida1}"
+                                              : "Não foi batido",
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 17)),
+                                    ],
+                                  ),
+                                  SizedBox(height: 10,),
+                                ],
+                              ),
+                            ),
+                          );

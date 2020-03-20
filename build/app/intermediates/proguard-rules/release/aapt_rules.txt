@@ -1,0 +1,8 @@
+# Referenced at C:\Users\Leo\Documents\ProjetosFlutter\controle_ponto - Copia - Release Migrada\build\app\intermediates\merged_manifests\release\processReleaseManifest\merged\AndroidManifest.xml:28
+-keep class com.example.controle_ponto.MainActivity { <init>(...); }
+# Referenced at C:\Users\Leo\Documents\ProjetosFlutter\controle_ponto - Copia - Release Migrada\build\app\intermediates\merged_manifests\release\processReleaseManifest\merged\AndroidManifest.xml:63
+-keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(...); }
+# Referenced at C:\Users\Leo\Documents\ProjetosFlutter\controle_ponto - Copia - Release Migrada\build\app\intermediates\merged_manifests\release\processReleaseManifest\merged\AndroidManifest.xml:23
+-keep class io.flutter.app.FlutterApplication { <init>(...); }
+# Referenced at C:\Users\Leo\Documents\ProjetosFlutter\controle_ponto - Copia - Release Migrada\build\app\intermediates\merged_manifests\release\processReleaseManifest\merged\AndroidManifest.xml:53
+-keep class io.flutter.plugins.imagepicker.ImagePickerFileProvider { <init>(...); }
