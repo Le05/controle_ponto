@@ -130,7 +130,7 @@ class _AddFotoState extends State<AddFoto> {
           )),
         ),
         onWillPop: () {
-          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AddFoto()));
+          return Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AddFoto()));
         },
       ),
     );

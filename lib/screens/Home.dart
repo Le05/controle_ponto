@@ -660,7 +660,7 @@ class _HomeState extends State<Home> {
             ),
           ),
           onWillPop: () {
-            SystemChannels.platform.invokeMethod<void>('SystemNavigator.pop');
+            return SystemChannels.platform.invokeMethod<void>('SystemNavigator.pop');
           },
         ));
   }

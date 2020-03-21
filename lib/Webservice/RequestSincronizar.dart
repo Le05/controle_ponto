@@ -5,17 +5,17 @@ import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Dio dio = Dio();
-//String baseUrl = "http://201.23.232.153:8080/ikponto";
-String baseUrl = "https://ikponto.com.br";
+String baseUrl = "http://177.19.159.202:8080/ikponto";
+//String baseUrl = "https://ikponto.com.br";
 
 Helpers helpers = Helpers();
 
 Future sincronizar() async {
- // List dataSeparadas = List();
+  // List dataSeparadas = List();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   List<MarcaPonto> marcaPonto = await helpers.getAlPontosNotSync();
   User user = await helpers.getUser(int.parse(prefs.getString("id")));
-  
+
   String ultimaData;
   List pont = List();
   Map<String, dynamic> pontoJson;
@@ -32,8 +32,12 @@ Future sincronizar() async {
           //criando o json para inserir na requisição separadamente
           pontoJson = {
             "dia": pontos.dataPontos.toString(),
-            "dataHora": pontos.dataPontos.toString() + " " + pontos.horaPontos.toString(),
-            "sequencia": contaZerosSequencia(pontos.sequenciaPontos).toString()+pontos.sequenciaPontos.toString(),
+            "dataHora": pontos.dataPontos.toString() +
+                " " +
+                pontos.horaPontos.toString(),
+            "sequencia":
+                contaZerosSequencia(pontos.sequenciaPontos).toString() +
+                    pontos.sequenciaPontos.toString(),
             "numeroSerie": user.numSerieUser.toString(),
             "pis": user.pisUser.toString(),
             "numCnpj": user.cnpjUser.toString(),
@@ -49,24 +53,25 @@ Future sincronizar() async {
         'Authorization': 'Bearer ' + prefs.getString("key"),
         'idFuncionario': prefs.getString("id")
       };
-      await dio.post("$baseUrl/servico/sessao/ponto/processar-marcacoes", data: {
-
-    "id": prefs.getString("id"),
-		"grupo":prefs.getString("grupo"),
-    "dataInicio": dat.dataPontos,
-    "dataFinal": dat.dataPontos,
-    "cnpj": user.cnpjUser,
-    "coletas": [
-      {
-				"pis":user.pisUser,
-        "dias": [
-					{
-						"dia":dat.dataPontos,
-						"marcacoes":pont  // dentro do pont, ja tem as [] e as {}, por conta disso, nao precisa colocar
-					}
-				]
-      }
-    ]
+      await dio
+          .post("$baseUrl/servico/sessao/ponto/processar-marcacoes", data: {
+        "id": prefs.getString("id"),
+        "grupo": prefs.getString("grupo"),
+        "dataInicio": dat.dataPontos,
+        "dataFinal": dat.dataPontos,
+        "cnpj": user.cnpjUser,
+        "coletas": [
+          {
+            "pis": user.pisUser,
+            "dias": [
+              {
+                "dia": dat.dataPontos,
+                "marcacoes":
+                    pont // dentro do pont, ja tem as [] e as {}, por conta disso, nao precisa colocar
+              }
+            ]
+          }
+        ]
       }).then((onValue) async {
         // pega os ids dos pontos que foram sincronizados(id do ponto no banco)
         for (var sinc in sincronizado) {
@@ -81,11 +86,11 @@ Future sincronizar() async {
   }
 }
 
-contaZerosSequencia(String sequencia){
+contaZerosSequencia(String sequencia) {
   String zeros = "0";
   var tamanhoSequencia = sequencia.toString();
   for (var i = 0; i < 8 - tamanhoSequencia.length; i++) {
-    zeros = zeros+"0";
+    zeros = zeros + "0";
   }
   return zeros;
 }

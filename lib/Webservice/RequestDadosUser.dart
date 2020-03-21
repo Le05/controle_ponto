@@ -1,13 +1,12 @@
-import 'dart:io';
 import 'package:controle_ponto/Webservice/RequestJornada.dart';
 import 'package:controle_ponto/models/PontoModel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 
 Dio dio = Dio();
-//String baseUrl = "http://201.23.232.153:8080/ikponto";
-String baseUrl = "https://ikponto.com.br";
-Map<String,dynamic> mapRetorno = {};
+String baseUrl = "http://177.19.159.202:8080/ikponto";
+//String baseUrl = "https://ikponto.com.br";
+Map<String, dynamic> mapRetorno = {};
 Future getDadosUser(String token, String id) async {
   Response response;
   dio.options.connectTimeout = 5000;
@@ -15,8 +14,7 @@ Future getDadosUser(String token, String id) async {
     'Authorization': 'Bearer ' + token,
     'idFuncionario': id
   };
-  dio.options.contentType =
-      ContentType.parse("application/x-www-form-urlencoded");
+  dio.options.contentType = "application/x-www-form-urlencoded";
   response = await dio.post(
       baseUrl + "/servico/sessao/funcionario/obter-dados-gerais",
       data: {"idFuncionario": id});
@@ -31,8 +29,7 @@ Future getPontos() async {
     'Authorization': 'Bearer ' + prefs.getString("key"),
     'idFuncionario': prefs.getString("id")
   };
-  dio.options.contentType =
-      ContentType.parse("application/x-www-form-urlencoded");
+  dio.options.contentType = "application/x-www-form-urlencoded";
   response = await dio.post(baseUrl + "/servico/sessao/ponto/obter-pontos",
       data: {"idFuncionario": prefs.getString("id")});
 
@@ -47,8 +44,8 @@ Future getPontos() async {
     pontosReversos.add(retiraDataPonto(ponto));
   }
   int qtdPontos = await buscaDiasPonto();
-  mapRetorno.addAll({"qtdPontos":qtdPontos,"Pontos":pontosReversos});
-  
+  mapRetorno.addAll({"qtdPontos": qtdPontos, "Pontos": pontosReversos});
+
   return mapRetorno;
 }
 
@@ -56,32 +53,32 @@ retiraDataPonto(Ponto ponto) {
   var entrada;
   var saida;
   if (ponto.entrada1 != null) {
-    entrada = ponto.entrada1.split(" ");
+    entrada = ponto.entrada1.split("T");
     ponto.entrada1 = entrada[1];
     entrada = "";
   }
   if (ponto.entrada2 != null) {
-    entrada = ponto.entrada2.split(" ");
+    entrada = ponto.entrada2.split("T");
     ponto.entrada2 = entrada[1];
     entrada = "";
   }
   if (ponto.entrada3 != null) {
-    entrada = ponto.entrada3.split(" ");
+    entrada = ponto.entrada3.split("T");
     ponto.entrada3 = entrada[1];
     entrada = "";
   }
   if (ponto.saida1 != null) {
-    saida = ponto.saida1.split(" ");
+    saida = ponto.saida1.split("T");
     ponto.saida1 = saida[1];
     saida = "";
   }
   if (ponto.saida2 != null) {
-    saida = ponto.saida2.split(" ");
+    saida = ponto.saida2.split("T");
     ponto.saida2 = saida[1];
     saida = "";
   }
   if (ponto.saida3 != null) {
-    saida = ponto.saida3.split(" ");
+    saida = ponto.saida3.split("T");
     ponto.saida3 = saida[1];
     saida = "";
   }

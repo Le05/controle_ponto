@@ -244,7 +244,7 @@ class _AcessarState extends State<Acessar> {
             ],
           ),
           onWillPop: () {
-            Navigator.pushReplacement(
+            return Navigator.pushReplacement(
                 context, MaterialPageRoute(builder: (context) => Login()));
           },
         ),

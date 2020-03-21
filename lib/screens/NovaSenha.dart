@@ -1,7 +1,6 @@
 import 'package:controle_ponto/Dialogs/DialogsFirstAccess.dart';
 import 'package:controle_ponto/Webservice/RequestLogin.dart';
 import 'package:controle_ponto/screens/Acessar.dart';
-import 'package:controle_ponto/screens/AddFoto.dart';
 import 'package:controle_ponto/screens/FirstAcess.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_dialog/progress_dialog.dart';
@@ -183,7 +182,7 @@ class _NovaSenhaState extends State<NovaSenha> {
           ],
         ),
         onWillPop: () {
-          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => FirstAcess()));
+          return Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => FirstAcess()));
         },
       )),
     );

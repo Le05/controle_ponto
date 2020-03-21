@@ -325,7 +325,8 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                                       pontoSequencia[2]
                                                           .toString(),
                                                       pontoSequencia[3]
-                                                          .toString())
+                                                          .toString(),
+                                                          endereco)
                                                   .then((onValue) async {
                                                 await helpers
                                                     .savePonto(marcaPonto);

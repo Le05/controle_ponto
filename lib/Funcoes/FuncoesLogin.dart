@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:controle_ponto/Webservice/RequestSincronizar.dart';
+import 'package:device_info/device_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // verifica se foi marcado o checkbox na pagina de acessar
@@ -71,4 +74,21 @@ Future<int> loginOff(String login, String senha) async {
 
 Future validaSenhaOff(String login,String senha) async {
 
+}
+
+
+String deviceID;
+
+Future<bool> buscarDeviceID() async {
+  DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+  AndroidDeviceInfo androidInfo;
+  IosDeviceInfo iosinfo;
+  if (Platform.isAndroid) {
+    androidInfo = await deviceInfo.androidInfo;
+    deviceID = "RQ8KB0AZDEE";//androidInfo.androidId;
+  } else if (Platform.isIOS) {
+    iosinfo = await deviceInfo.iosInfo;
+    deviceID = iosinfo.identifierForVendor;
+  }
+  return true;
 }

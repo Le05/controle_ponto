@@ -1,11 +1,9 @@
-import 'dart:io';
-
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Dio dio = Dio();
-//String baseUrl = "http://201.23.232.153:8080/ikponto";
-String baseUrl = "https://ikponto.com.br";
+String baseUrl = "http://177.19.159.202:8080/ikponto";
+//String baseUrl = "https://ikponto.com.br";
 
 getJornada() async {
 SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -15,9 +13,9 @@ dio.options.headers = {
     'Authorization': 'Bearer ' + prefs.getString("key"),
     'idFuncionario': prefs.getString("id")
   };
-dio.options.contentType = ContentType.parse("application/x-www-form-urlencoded");
+dio.options.contentType = "application/x-www-form-urlencoded";
 response = await dio.post(baseUrl+"/servico/sessao/ponto/obter-horarios",data: {
-  "idFuncionario":prefs.getString("id")
+  "idFuncionario":prefs.getString("id"),
 });
 
 return response.data;
