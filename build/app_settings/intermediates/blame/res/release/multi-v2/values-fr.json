@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto - Copia - Release Migrada\\build\\app_settings\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
+            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto\\build\\app_settings\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-fr\\values-fr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0-rc01.aar\\e1f925d7d75a88664bd57835437772ce\\res\\values-fr\\values-fr.xml",
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto - Copia - Release Migrada\\build\\app_settings\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-fr\\values-fr.xml",
+            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto\\build\\app_settings\\intermediates\\res\\merged\\release\\values-fr\\values-fr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0-rc01.aar\\e1f925d7d75a88664bd57835437772ce\\res\\values-fr\\values-fr.xml",

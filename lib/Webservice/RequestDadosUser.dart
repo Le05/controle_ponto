@@ -52,6 +52,10 @@ Future getPontos() async {
 retiraDataPonto(Ponto ponto) {
   var entrada;
   var saida;
+  if(ponto.dia != null){
+    var data = ponto.dia.split("-");
+    ponto.dia = data[2]+"/"+data[1]+"/"+data[0];
+  }
   if (ponto.entrada1 != null) {
     entrada = ponto.entrada1.split("T");
     ponto.entrada1 = entrada[1];

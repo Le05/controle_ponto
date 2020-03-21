@@ -10,7 +10,6 @@ Referenced Strings:
   0
   0x%08x
   :memory:
-  A::
   ACCESSIBLE_NAVIGATION
   ACTION_ARGUMENT_EXTEND_SELECTION_BOOLEAN
   ACTION_ARGUMENT_MOVEMENT_GRANULARITY_INT
@@ -127,8 +126,6 @@ Referenced Strings:
   HapticFeedbackType.lightImpact
   HapticFeedbackType.mediumImpact
   HapticFeedbackType.selectionClick
-  HardwareIds
-  I
   INCREASE
   INITIALIZED
   INTERNAL_ERROR
@@ -156,7 +153,6 @@ Referenced Strings:
   IconCompat
   ImageResizer
   InlinedApi
-  J
   LANDSCAPE_LEFT
   LANDSCAPE_RIGHT
   LEFT
@@ -192,7 +188,6 @@ Referenced Strings:
   NetworkLocationStatus:
   NewApi
   NotificationCompat
-  O:
   ON_ANY
   ON_CREATE
   ON_DESTROY
@@ -215,7 +210,6 @@ Referenced Strings:
   PlatformChannel
   PlatformViewsChannel
   PlatformViewsController
-  PrivateApi
   REMOVE
   REPLACE
   RESOLUTION_REQUIRED
@@ -224,7 +218,6 @@ Referenced Strings:
   RESUMED
   RIGHT
   RTL
-  ResultT:
   SAFE_PARCELABLE_NULL_STRING
   SCOPES_ROUTE
   SCROLL_DOWN
@@ -270,14 +263,10 @@ Referenced Strings:
   SystemSoundType.click
   SystemUiOverlay.bottom
   SystemUiOverlay.top
-  T
-  T:
   TAP
-  TContinuationResult:
   TEXT
   TIMEOUT
   TOP_OVERLAYS
-  TT
   TextCapitalization.characters
   TextCapitalization.none
   TextCapitalization.sentences
@@ -334,15 +323,12 @@ Referenced Strings:
   UTF8
   UntrackedBindService
   UseSparseArrays
-  V:
   VGhpcyBpcyB0aGUgcHJlZml4IGZvciBCaWdJb...
   VGhpcyBpcyB0aGUgcHJlZml4IGZvciBEb3VibGUu
   VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIGxpc3Qu
   VISIBLE_PASSWORD
   WORDS
   WhiteBalance
-  Z
-  ZZZ
   _
   _data
   _display_name

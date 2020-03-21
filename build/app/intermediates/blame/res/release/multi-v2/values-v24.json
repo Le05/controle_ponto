@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto - Copia - Release Migrada\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto\\build\\app\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\media-1.0.0-rc01.aar\\e53c1ad0f38171e53395916a29ef1a56\\res\\values-v24\\values-v24.xml",

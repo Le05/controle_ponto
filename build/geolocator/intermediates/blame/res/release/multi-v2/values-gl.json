@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto - Copia - Release Migrada\\build\\geolocator\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-gl\\values-gl.xml",
+            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto\\build\\geolocator\\intermediates\\res\\merged\\release\\values-gl\\values-gl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-base-16.0.1.aar\\04ab592e46675957afa79d184da3d43e\\res\\values-gl\\values.xml",
@@ -57,7 +57,7 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto - Copia - Release Migrada\\build\\geolocator\\intermediates\\res\\merged\\release\\values-gl\\values-gl.xml",
+            "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto\\build\\geolocator\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-gl\\values-gl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\jetified-play-services-base-16.0.1.aar\\04ab592e46675957afa79d184da3d43e\\res\\values-gl\\values.xml",

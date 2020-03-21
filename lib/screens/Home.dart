@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:controle_ponto/Funcoes/rotacaoTela.dart';
 import 'package:controle_ponto/HelpersBanco/Helpers.dart';
 import 'package:controle_ponto/Webservice/RequestDadosUser.dart';
