@@ -1,3 +1,4 @@
+import 'package:controle_ponto/Funcoes/FuncoesLogin.dart';
 import 'package:controle_ponto/HelpersBanco/Helpers.dart';
 import 'package:controle_ponto/models/MarcarPontoModel.dart';
 import 'package:controle_ponto/models/UserModel.dart';
@@ -42,7 +43,7 @@ Future marcacaoPonto(MarcaPonto marcaPonto, String idPont,
                 "dia": marcaPonto.dataPontos,
                 "dataHora": marcaPonto.dataPontos + " " + marcaPonto.horaPontos,
                 "sequencia": zerosSequencia + marcaPonto.sequenciaPontos,
-                "numeroSerie": dadosUser.numSerieUser,
+                "numeroSerie": deviceID,
                 "pis": dadosUser.pisUser,
                 "numCnpj": dadosUser.cnpjUser,
                 "fonte": "I",
