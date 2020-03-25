@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'package:controle_ponto/Funcoes/FuncoesLogin.dart';
 import 'package:controle_ponto/Funcoes/rotacaoTela.dart';
 import 'package:controle_ponto/HelpersBanco/Helpers.dart';
 import 'package:controle_ponto/Webservice/RequestDadosUser.dart';
@@ -9,7 +9,6 @@ import 'package:controle_ponto/screens/Login.dart';
 import 'package:controle_ponto/screens/MarcarPonto.dart';
 import 'package:controle_ponto/screens/Sincronizar.dart';
 import 'package:controle_ponto/screens/SobreApp.dart';
-import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -35,14 +34,6 @@ class _HomeState extends State<Home> {
   _validaExisteDados({bool pegaUserName}) async {
     prefs = await SharedPreferences.getInstance();
     var dados = await helpers.getUser(int.parse(prefs.getString("id")));
-    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-    AndroidDeviceInfo androidInfo;
-    IosDeviceInfo iosinfo;
-    if (Platform.isAndroid) {
-      androidInfo = await deviceInfo.androidInfo;
-    } else if (Platform.isIOS) {
-      iosinfo = await deviceInfo.iosInfo;
-    }
     //if(pegaUserName != true){
     if (dados == null) {
       var dados =
@@ -57,7 +48,7 @@ class _HomeState extends State<Home> {
       user.cnpjUser = dados["cnpj"];
       user.nomeUser = dados["nome"];
       user.pisUser = dados["pis"];
-      user.numSerieUser = androidInfo.androidId;
+      user.numSerieUser = deviceID;
       user.grupoUser = prefs.getString("grupo");
       await helpers.saveUser(user);
       dadosuser = await helpers.getUser(int.parse(prefs.getString("id")));
