@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Leo\\Documents\\ProjetosFlutter\\controle_ponto\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\media-1.0.0-rc01.aar\\e53c1ad0f38171e53395916a29ef1a56\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\Leo\\.gradle\\caches\\transforms-1\\files-1.1\\media-1.0.0.aar\\535f155c0ef6a43a7d540221879c9132\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

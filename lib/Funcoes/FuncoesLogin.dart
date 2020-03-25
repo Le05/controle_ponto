@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:imei_plugin/imei_plugin.dart';
 import 'package:controle_ponto/Webservice/RequestSincronizar.dart';
 import 'package:device_info/device_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -81,12 +81,14 @@ String deviceID;
 
 Future<bool> buscarDeviceID() async {
   DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
-  AndroidDeviceInfo androidInfo;
+  //AndroidDeviceInfo androidInfo;
   IosDeviceInfo iosinfo;
   if (Platform.isAndroid) {
-    androidInfo = await deviceInfo.androidInfo;
+    //androidInfo = await deviceInfo.androidInfo;
+    deviceID = await ImeiPlugin.getImei();
     //deviceID = "RQ8KB0AZDEE";
-    deviceID = androidInfo.androidId;
+    //deviceID = androidInfo.androidId;
+    print(deviceID);
   } else if (Platform.isIOS) {
     iosinfo = await deviceInfo.iosInfo;
     deviceID = iosinfo.identifierForVendor;

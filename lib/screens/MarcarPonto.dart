@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:app_settings/app_settings.dart';
+//import 'package:app_settings/app_settings.dart';
 import 'package:controle_ponto/Dialogs/DialogMarcaPonto.dart';
 import 'package:controle_ponto/Funcoes/FuncoesMarcaPonto.dart';
 import 'package:controle_ponto/HelpersBanco/Helpers.dart';
@@ -237,7 +237,7 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                               }
                                             } else {
                                               pr.hide();
-                                             AppSettings.openLocationSettings();
+                                            // AppSettings.openLocationSettings();
                                             }
                                           }).catchError((onError) async {
                                             await mensagemErroGeral(
