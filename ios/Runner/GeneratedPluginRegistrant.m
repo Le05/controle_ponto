@@ -4,8 +4,8 @@
 
 #import "GeneratedPluginRegistrant.h"
 
-#if __has_include(<device_info/DeviceInfoPlugin.h>)
-#import <device_info/DeviceInfoPlugin.h>
+#if __has_include(<device_info/FLTDeviceInfoPlugin.h>)
+#import <device_info/FLTDeviceInfoPlugin.h>
 #else
 @import device_info;
 #endif
