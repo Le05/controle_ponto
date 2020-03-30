@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Utilizado para reconhecimento Facial</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Utilizado para obter a localizacao e bater o ponto</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Utilizado para obter a localizacao e bater o ponto</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
