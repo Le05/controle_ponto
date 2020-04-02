@@ -226,7 +226,7 @@ class _HomeState extends State<Home> {
                           style: TextStyle(color: Colors.white, fontSize: 17),
                         ),
                         onPressed: () {
-                          prefs.clear();
+                          //prefs.clear();
                           Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) => Login()));
                         },
