@@ -41,7 +41,9 @@ Future sincronizar() async {
             "numeroSerie": user.numSerieUser.toString(),
             "pis": user.pisUser.toString(),
             "numCnpj": user.cnpjUser.toString(),
-            "fonte": "I"
+            "fonte": "I",
+            "externa": true,
+            "local": "Marcação off-line"
           };
           sincronizado.add(pontos.idPontos);
           pont.add(pontoJson);
