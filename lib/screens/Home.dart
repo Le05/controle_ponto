@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                         ),
                         onPressed: () {
                           Navigator.of(context).pop();
-                          Navigator.push(
+                          Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => MarcarPonto()));
