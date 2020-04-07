@@ -1,3 +1,4 @@
+import 'package:controle_ponto/screens/Home.dart';
 import 'package:flutter/material.dart';
 
 Future<void> mensagemAcessoNegado(BuildContext context, String mensagem) async {
@@ -100,7 +101,7 @@ Future<void> mensagemMarcacaoPonto(
                     child: Text('Ok'),
                     onPressed: () {
                       Navigator.of(context).pop();
-                      Navigator.of(context).pop();
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Home()));
                     },
                   ),
                 ],

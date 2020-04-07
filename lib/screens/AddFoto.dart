@@ -148,7 +148,7 @@ class _AddFotoState extends State<AddFoto> {
   }
 
   converterBase64(File file) {
-  var base64Image, fileName;
+  var base64Image;
   if (file != null) {
     base64Image = base64.encode(file.readAsBytesSync());
     //fileName = file.path.split("/").last;
