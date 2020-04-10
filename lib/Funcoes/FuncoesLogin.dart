@@ -86,7 +86,7 @@ Future<bool> buscarDeviceID() async {
   if (Platform.isAndroid) {
     //androidInfo = await deviceInfo.androidInfo;
     deviceID = await ImeiPlugin.getImei();
-    deviceID = "RQ8KB0AZDEE";
+    //deviceID = "RQ8KB0AZDEE";
     //deviceID = androidInfo.androidId;
   } else if (Platform.isIOS) {
     iosinfo = await deviceInfo.iosInfo;
