@@ -11,7 +11,7 @@ final String tabelaPontos = "pontos";
 
 // campos referentes a tabela de usuarios
 final String idUser = "id";
-final String id_userUser = "id_user";
+final String idUserUser = "id_user";
 final String loginUser = "login";
 final String senhaUser = "senha";
 final String nomeUser = "nome";
@@ -26,7 +26,7 @@ final String grupoUser = "grupo";
 
 // campos referentes a tabela de pontos
 final String idPontos = "id";
-final String id_userPontos = "id_user";
+final String idUserPontos = "id_user";
 final String dataPontos = "data";
 final String horaPontos = "hora";
 final String numeroPontos = "numero_ponto";
@@ -60,10 +60,10 @@ class Helpers {
     return await openDatabase(path, version: 1,
         onCreate: (Database db, int newerVersion) async {
       await db.execute(
-          "CREATE TABLE $tabelaUsuarios($idUser INTEGER PRIMARY KEY,$id_userUser INTEGER,$loginUser TEXT,$senhaUser TEXT, $nomeUser TEXT,$tokenUser TEXT"
+          "CREATE TABLE $tabelaUsuarios($idUser INTEGER PRIMARY KEY,$idUserUser INTEGER,$loginUser TEXT,$senhaUser TEXT, $nomeUser TEXT,$tokenUser TEXT"
           ",$expireTokenUser TEXT, $adminUser INTEGER,$foto64User TEXT,$cnpjUser TEXT, $pisUser INTEGER, $numSerieUser TEXT, $grupoUser TEXT)");
       await db.execute(
-          "CREATE TABLE $tabelaPontos($idPontos INTEGER PRIMARY KEY,$id_userPontos INTEGER,$dataPontos TEXT"
+          "CREATE TABLE $tabelaPontos($idPontos INTEGER PRIMARY KEY,$idUserPontos INTEGER,$dataPontos TEXT"
           ",$horaPontos TEXT,$numeroPontos INTEGER, $sequenciaPontos INTEGER, $latitudePontos TEXT, $longitudePontos TEXT, $sincronizadoPontos TEXT)");
     });
   }
@@ -80,7 +80,7 @@ class Helpers {
     List<Map> maps = await dbIkponto.query(tabelaUsuarios,
         columns: [
           idUser,
-          id_userUser,
+          idUserUser,
           //nomeUser,
           tokenUser,
           expireTokenUser,
@@ -104,7 +104,7 @@ class Helpers {
   Future getPontoDiaAtual(String id, String dataAtual) async {
     Database dbIkponto = await db;
     List listMap = await dbIkponto.rawQuery(
-        "SELECT * FROM $tabelaPontos WHERE $id_userPontos = $id and $dataPontos = '$dataAtual' order by $dataPontos DESC");
+        "SELECT * FROM $tabelaPontos WHERE $idUserPontos = $id and $dataPontos = '$dataAtual' order by $dataPontos DESC");
     List<MarcaPonto> listPontos = List();
     for (Map m in listMap) {
       listPontos.add(MarcaPonto.fromMap(m));
@@ -115,7 +115,7 @@ class Helpers {
   Future<List> getPontoGeral(String id) async {
     Database dbIkponto = await db;
     List listMap = await dbIkponto.rawQuery(
-        "SELECT * FROM $tabelaPontos WHERE $id_userPontos = $id order by $sequenciaPontos DESC");
+        "SELECT * FROM $tabelaPontos WHERE $idUserPontos = $id order by $sequenciaPontos DESC");
     List<MarcaPonto> listPontos = List();
     for (Map m in listMap) {
       listPontos.add(MarcaPonto.fromMap(m));
@@ -137,13 +137,13 @@ class Helpers {
       "$expireTokenUser": expiretoken
     };
     List<Map> maps = await dbIkponto.query(tabelaUsuarios,
-        columns: [id_userUser, tokenUser],
-        where: "$id_userUser = ?",
+        columns: [idUserUser, tokenUser],
+        where: "$idUserUser = ?",
         whereArgs: [id]);
 
     if (maps.length > 0) {
       return await dbIkponto.update(tabelaUsuarios, dadosKey,
-          where: "$id_userUser = ?", whereArgs: [id]);
+          where: "$idUserUser = ?", whereArgs: [id]);
     } // else {
     //return null;
     //}
@@ -153,7 +153,7 @@ class Helpers {
     Map<String, dynamic> foto64 = {"foto64": foto};
     Database dbIkponto = await db;
     return await dbIkponto.update(tabelaUsuarios, foto64,
-        where: "$id_userUser = ?", whereArgs: [id]);
+        where: "$idUserUser = ?", whereArgs: [id]);
   }
 
   Future<int> updateSync(String id) async {
@@ -166,8 +166,8 @@ class Helpers {
   Future<User> getUserKey(int id) async {
     Database dbIkponto = await db;
     List<Map> maps = await dbIkponto.query(tabelaUsuarios,
-        columns: [id_userUser, tokenUser],
-        where: "$id_userUser = ?",
+        columns: [idUserUser, tokenUser],
+        where: "$idUserUser = ?",
         whereArgs: [id]);
 
     if (maps.length > 0) {
@@ -182,7 +182,7 @@ class Helpers {
     List<Map> maps = await dbIkponto.query(tabelaUsuarios,
         columns: [
           //idUser,
-          id_userUser,
+          idUserUser,
           nomeUser,
           //tokenUser,
           //expireTokenUser,
@@ -193,7 +193,7 @@ class Helpers {
           numSerieUser,
           grupoUser
         ],
-        where: "$id_userUser = ?",
+        where: "$idUserUser = ?",
         whereArgs: [id]);
 
     if (maps.length > 0) {
@@ -208,7 +208,7 @@ class Helpers {
     List<Map> maps = await dbIkponto.query(tabelaUsuarios,
         columns: [
           //idUser,
-          id_userUser,
+          idUserUser,
           //nomeUser,
           //tokenUser,
           //expireTokenUser,
@@ -219,7 +219,7 @@ class Helpers {
           //numSerieUser,
           //grupoUser
         ],
-        where: "$id_userUser = ?",
+        where: "$idUserUser = ?",
         whereArgs: [id]);
 
     if (maps.length > 0) {
@@ -231,7 +231,7 @@ class Helpers {
   Future<List> getAllPontos() async {
     Database dbIkponto = await db;
     List listMap = await dbIkponto
-        .rawQuery("SELECT $id_userPontos FROM $tabelaPontos order by hora ASC");
+        .rawQuery("SELECT $idUserPontos FROM $tabelaPontos order by hora ASC");
     List<MarcaPonto> listPontos = List();
     for (Map m in listMap) {
       listPontos.add(MarcaPonto.fromMap(m));
@@ -244,7 +244,7 @@ class Helpers {
     int id = int.parse(prefs.getString("id"));
     Database dbIkponto = await db;
     List listMap = await dbIkponto.rawQuery(
-        "SELECT * FROM $tabelaPontos WHERE $id_userPontos = $id and $sincronizadoPontos = 'false' order by $sequenciaPontos ASC");
+        "SELECT * FROM $tabelaPontos WHERE $idUserPontos = $id and $sincronizadoPontos = 'false' order by $sequenciaPontos ASC");
     List<MarcaPonto> listPontos = List();
     for (Map m in listMap) {
       listPontos.add(MarcaPonto.fromMap(m));
@@ -257,7 +257,7 @@ class Helpers {
     int id = int.parse(prefs.getString("id"));
     Database dbIkponto = await db;
     List listMap = await dbIkponto.rawQuery(
-        "SELECT * FROM $tabelaPontos WHERE $id_userPontos = $id and $sincronizadoPontos = 'false' order by $dataPontos ASC");
+        "SELECT * FROM $tabelaPontos WHERE $idUserPontos = $id and $sincronizadoPontos = 'false' order by $dataPontos ASC");
     List<MarcaPonto> listPontos = List();
     for (Map m in listMap) {
       listPontos.add(MarcaPonto.fromMap(m));

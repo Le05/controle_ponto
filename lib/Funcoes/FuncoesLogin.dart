@@ -59,7 +59,7 @@ Future<int> loginOff(String login, String senha) async {
   } else {
     /*Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => Home()));*/
-      prefs.setString("id", user.id_userUser);
+      prefs.setString("id", user.idUserUser);
       prefs.setString("login", login);
       prefs.setString("key", user.tokenUser);
       prefs.setString("admin", user.adminUser);

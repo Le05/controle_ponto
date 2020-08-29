@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
     if (dados == null) {
       var dados =
           await getDadosUser(prefs.getString("key"), prefs.getString("id"));
-      user.id_userUser = prefs.getString("id");
+      user.idUserUser = prefs.getString("id");
       user.tokenUser = prefs.getString("key");
       user.loginUser = prefs.getString("login");
       user.senhaUser = prefs.getString("senha");

@@ -12,6 +12,7 @@ import 'package:controle_ponto/screens/Home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -283,9 +284,9 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                             int.parse(prefs.getString("id")));
                                     List pontoSequencia =
                                         await verificaUltimoPonto(
-                                            dadosUser.id_userUser, dataAtual);
-                                    marcaPonto.id_userPontos =
-                                        dadosUser.id_userUser;
+                                            dadosUser.idUserUser, dataAtual);
+                                    marcaPonto.idUserPontos =
+                                        dadosUser.idUserUser;
                                     marcaPonto.dataPontos = dataAtual;
                                     marcaPonto.horaPontos = dataHora;
                                     marcaPonto.latitudePontos =
@@ -303,7 +304,7 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                       if (latitude != null &&
                                           longitude != null) {
                                         // inicio da verificação da foto
-                                        dadosUser.foto64User = "64554654878";
+                                        //dadosUser.foto64User = "64554654878";
                                         if (dadosUser.foto64User == null) {
                                           pr.hide();
                                           Navigator.pushReplacement(
@@ -314,18 +315,18 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                                       )));
                                         } else {
                                           // função comentada para nao abrir a camera para validar o usuario
-                                          //await _getFace();
+                                          await _getFace();
                                           // if correto é -> _image == null
                                           // o if abaixo é somente para enganar a validação
-                                          if (dadosUser.foto64User == null) {
+                                          if (_image == null) {
                                             pr.hide();
                                             await mensagemErroImage(context,
                                                 'É necessario que seja tirado uma foto, para que seja feita a autenticação facial');
                                           } else {
                                             // função abaixo cria um arquivo file atraves de um string
-                                            /* imageFile =
+                                             imageFile =
                                                 await createFileFromString(
-                                                    dadosUser.foto64User);*/
+                                                    dadosUser.foto64User);
                                             //confiance =
                                             await reconhecimentoFacial(
                                                     imageFile, _image)
@@ -403,12 +404,12 @@ class _MarcarPontoState extends State<MarcarPonto> {
         ));
   }
 
-  /*_getFace() async {
+  _getFace() async {
     var image = await ImagePicker.pickImage(source: ImageSource.camera);
     setState(() {
       _image = image;
     });
-  }*/
+  }
 
   separaCaracteresData() {
     var data = DateTime.now().toString();

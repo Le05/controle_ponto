@@ -7,10 +7,10 @@ import 'package:path_provider/path_provider.dart';
 Dio dio = Dio();
 
 Future reconhecimentoFacial(File fotoInterna,fotoTirada) async {
-/*var faceIdInterna,faceIdTirada;
+var faceIdInterna,faceIdTirada;
 String base = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/";
 Response response;
-dio.options.contentType = ContentType.parse("application/octet-stream");
+dio.options.contentType = "application/octet-stream";
 dio.options.headers = {
     'Ocp-Apim-Subscription-Key': '6c7b564b75dc4d0298042e0227c9462d'
   };
@@ -22,7 +22,7 @@ response = await dio.post(base+"detect",data: fotoTirada.openRead());
 faceIdTirada = response.data[0]["faceId"];
 // fim da tirada
 dio.clear();
-dio.options.contentType = ContentType.json;
+//dio.options.contentType =;
 dio.options.headers = {
     'Ocp-Apim-Subscription-Key': '6c7b564b75dc4d0298042e0227c9462d'
   };
@@ -32,8 +32,7 @@ response = await dio.post(base+"verify",data:{
 });
 
 return response.data["confidence"];
-*/
-return 0.7;
+
 }
 
 Future createFileFromString(String encodedStr) async {
@@ -44,11 +43,11 @@ File file = File(
 await file.writeAsBytes(bytes);
 return file;
 }
-/*
+
 Future<String> facedetect(File foto) async {
 String base = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/";
 Response response;
-dio.options.contentType = ContentType.parse("application/octet-stream");
+dio.options.contentType = "application/octet-stream";
 dio.options.headers = {
     'Ocp-Apim-Subscription-Key': '029a56926fce4d85a4691a95643a4f0e'
   };
@@ -60,7 +59,7 @@ return response.data[0]["faceId"];
 verifyFace(String faceIdLocal,String faceIdInst) async{
 String base = "https://westcentralus.api.cognitive.microsoft.com/face/v1.0/";
 Response response;
-dio.options.contentType = ContentType.json;
+//dio.options.contentType = ContentType.json;
 dio.options.headers = {
     'Ocp-Apim-Subscription-Key': '029a56926fce4d85a4691a95643a4f0e'
   };
@@ -73,7 +72,7 @@ print(response.data);
 return response.data["confidence"];
 
 }
-*/
+
 verificaConexao() async {
   dio.clear();
   Response response;

@@ -2,7 +2,7 @@
 
 class User {
   String idUser;
-  String id_userUser;
+  String idUserUser;
   String loginUser;
   String senhaUser;
   String nomeUser;
@@ -20,7 +20,7 @@ class User {
 // transforma o mapa vindo do sqflite para um modo utilizavel
   User.fromMap(Map map) {
     idUser = map["id"].toString();
-    id_userUser = map["id_user"].toString();
+    idUserUser = map["id_user"].toString();
     loginUser = map["login"];
     senhaUser = map["senha"];
     nomeUser = map["nome"];
@@ -39,7 +39,7 @@ class User {
   Map toMap() {
     Map<String, dynamic> map = {
       "id": idUser,
-      "id_user": id_userUser,
+      "id_user": idUserUser,
       "login": loginUser,
       "senha": senhaUser,
       "nome": nomeUser,

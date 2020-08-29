@@ -2,7 +2,7 @@ class MarcaPonto {
 
 //classe utilizada para modelar os dados para o save no banco
 String idPontos;
-String id_userPontos;
+String idUserPontos;
 String dataPontos;
 String horaPontos;
 String numeroPontos;
@@ -16,7 +16,7 @@ MarcaPonto();
 // transforma o mapa vindo do sqflite para um modo utilizavel
   MarcaPonto.fromMap(Map map) {
     idPontos = map["id"].toString();
-    id_userPontos = map["id_user"].toString();
+    idUserPontos = map["id_user"].toString();
     dataPontos = map["data"];
     horaPontos = map["hora"];
     numeroPontos = map["numero_ponto"].toString();
@@ -31,7 +31,7 @@ MarcaPonto();
   Map toMap() {
     Map<String, dynamic> map = {
       "id":idPontos,
-      "id_user": id_userPontos,
+      "id_user": idUserPontos,
       "data": dataPontos,
       "hora": horaPontos,
       "numero_ponto": numeroPontos,
