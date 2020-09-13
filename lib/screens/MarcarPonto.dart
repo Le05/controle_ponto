@@ -371,6 +371,7 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                                     "Erro ao autenticar, por favor tente novamente");
                                               }
                                             }).catchError((onError) async {
+                                              print(onError.response.data);
                                               pr.hide();
                                               await mensagemErroImage(context,
                                                   "Erro ao autenticar, contate a TI!!");
