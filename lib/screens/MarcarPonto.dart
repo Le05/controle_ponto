@@ -358,6 +358,7 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                                   await helpers
                                                       .savePonto(marcaPonto);
                                                   pr.hide();
+                                                  print(onError);
                                                   await mensagemMarcacaoPonto(
                                                       context,
                                                       "Ponto marcado somente internamente!!",
@@ -390,7 +391,7 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                       await helpers.savePonto(marcaPonto);
                                       await mensagemMarcacaoPonto(
                                           context,
-                                          "Ponto marcado somente internamente!!",
+                                          "$onError",
                                           "Sucesso interno");
                                     });
                                   }))

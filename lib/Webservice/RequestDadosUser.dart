@@ -1,11 +1,11 @@
 import 'package:controle_ponto/Webservice/RequestJornada.dart';
 import 'package:controle_ponto/models/PontoModel.dart';
+import 'package:controle_ponto/models/VariablesRunTime.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:dio/dio.dart';
 
 Dio dio = Dio();
-String baseUrl = "http://177.19.159.202:8080/ikponto";
-//String baseUrl = "https://ikponto.com.br";
+
 Map<String, dynamic> mapRetorno = {};
 Future getDadosUser(String token, String id) async {
   Response response;

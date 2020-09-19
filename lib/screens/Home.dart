@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
     _validaExisteDados();
   }
 
-  _validaExisteDados({bool pegaUserName}) async {
+  _validaExisteDados() async {
     prefs = await SharedPreferences.getInstance();
     var dados = await helpers.getUser(int.parse(prefs.getString("id")));
     //if(pegaUserName != true){

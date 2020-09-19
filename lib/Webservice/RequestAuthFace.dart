@@ -22,10 +22,19 @@ Future reconhecimentoFacial(File fotoInterna, fotoTirada) async {
   dio.options.contentType = "application/octet-stream";
  
   response = await dio.post(base + "detect", data: fotoInterna.openRead());
+
+  if(response.data.length == 0){
+    return 0.0;
+  }
   faceIdInterna = response.data[0]["faceId"];
 
 // fim da validação da face interna
   response = await dio.post(base + "detect", data: fotoTirada.openRead());
+
+  if(response.data.length == 0){
+    return 0.0;
+  }
+
   faceIdTirada = response.data[0]["faceId"];
 // fim da tirada
 

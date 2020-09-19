@@ -1,4 +1,5 @@
 import 'package:controle_ponto/Funcoes/FuncoesLogin.dart';
+import 'package:controle_ponto/models/VariablesRunTime.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -7,8 +8,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 // login normal
 
 Dio dio = Dio();
-String baseUrl = "http://177.19.159.202:8080/ikponto";
-//String baseUrl = "https://ikponto.com.br";
 
 Future firstAcessLogin(String login, String codigoValidacao) async {
   Response response;

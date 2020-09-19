@@ -1,6 +1,6 @@
 import 'package:controle_ponto/Dialogs/DialogsFirstAccess.dart';
 import 'package:controle_ponto/Webservice/RequestLogin.dart';
-import 'package:controle_ponto/screens/Acessar.dart';
+import 'package:controle_ponto/screens/AddFoto.dart';
 import 'package:controle_ponto/screens/FirstAcess.dart';
 import 'package:flutter/material.dart';
 import 'package:progress_dialog/progress_dialog.dart';
@@ -161,7 +161,8 @@ class _NovaSenhaState extends State<NovaSenha> {
                                               pr.update(message: "Redirecionando para tela de login...");
                                               await Future.delayed(
                                           Duration(seconds: 1));
-                                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Acessar()));
+                                          // Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => Acessar()));
+                                          Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => AddFoto(marcar: false,)));
                                         }).catchError((onError) async {
                                           pr.hide();
                                           await mensagemErroSenha(context,onError.response.data["erro"]);
