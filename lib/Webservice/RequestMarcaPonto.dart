@@ -25,6 +25,43 @@ Future marcacaoPonto(MarcaPonto marcaPonto, String idPont,
     'Authorization': 'Bearer ' + prefs.getString("key"),
     'idFuncionario': prefs.getString("id")
   };
+
+  var json = {
+    "id": prefs.getString("id"),
+    "grupo": prefs.getString("grupo"),
+    "dataInicio": marcaPonto.dataPontos,
+    "dataFinal": marcaPonto.dataPontos,
+    "cnpj": dadosUser.cnpjUser,
+    "coletas": [
+      {
+        "pis": dadosUser.pisUser,
+        "dias": [
+          {
+            "dia": marcaPonto.dataPontos,
+            "marcacoes": [
+              {
+                "dia": marcaPonto.dataPontos,
+                "dataHora": marcaPonto.dataPontos + " " + marcaPonto.horaPontos,
+                "sequencia": zerosSequencia + marcaPonto.sequenciaPontos,
+                "numeroSerie": dadosUser.numSerieUser,
+                "pis": dadosUser.pisUser,
+                "numCnpj": dadosUser.cnpjUser,
+                "fonte": "I",
+                "externa": true,
+                "latitude": marcaPonto.latitudePontos,
+                "longitude": marcaPonto.longitudePontos,
+                "registroMobile": idPont,
+                "local": localizacaoEndereco
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  };
+
+  print(json);
+  
   response = await dio.post("$baseUrl/servico/sessao/ponto/marcar", data: {
     "id": prefs.getString("id"),
     "grupo": prefs.getString("grupo"),
