@@ -246,6 +246,9 @@ class _MarcarPontoState extends State<MarcarPonto> {
                                                   }
                                                 }
                                               } else {
+                                                await mensagemAcessoNegado(
+                                                        context,
+                                                        "Verifique se a localização do app está ativa!");
                                                 pr.hide();
                                                 // AppSettings.openLocationSettings();
                                               }
