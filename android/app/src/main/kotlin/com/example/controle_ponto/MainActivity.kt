@@ -1,4 +1,4 @@
-package com.example.controle_ponto
+package br.com.ikponto.controle.ponto
 
 import android.os.Bundle
 

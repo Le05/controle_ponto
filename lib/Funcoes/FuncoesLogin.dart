@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'package:imei_plugin/imei_plugin.dart';
 import 'package:controle_ponto/Webservice/RequestSincronizar.dart';
 import 'package:device_info/device_info.dart';
 import 'package:shared_preferences/shared_preferences.dart';
